@@ -75,6 +75,9 @@ def read_text_aloud(paragraph, les_nummer, vlc_path, lang="nl"):
         if not(line==''):
             tts = gTTS(text=line, lang=lang, slow=False)
 
+            if not os.path.exists("audio"):
+                os.makedirs("audio")
+
             # Save the audio to a file
             audio_file = f"audio/audio{les_nummer}_{i+1}.mp3"
             tts.save(audio_file)
