@@ -34,7 +34,7 @@ Nederlands4Python is a Python application designed to help users learn Dutch thr
 2. Install the required Python libraries:
 
    ```bash
-   pip install vlc textblob nltk
+   pip install gtts
    ```
 
 3. Ensure [VLC](https://www.videolan.org/vlc/) is installed and accessible from your command line.
