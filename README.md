@@ -1,11 +1,11 @@
 
 # Nederlands4Python
 
-Nederlands4Python is a Python application designed to help users learn Dutch through interactive text-to-speech exercises. Created specifically for international students of the Dutch courses at Technische Universiteit Delft (TU Delft), the application reads input text in Dutch and plays it back, sentence by sentence, using VLC media player. After each sentence, users can write their responses, which are then corrected and graded based on accuracy.
+Nederlands4Python is a Python application designed to help users learn Dutch through interactive text-to-speech exercises. Created specifically for international students of the Dutch courses at Technische Universiteit Delft (TU Delft), the application reads input text in Dutch and plays it back, sentence by sentence, using [VLC](https://www.videolan.org/vlc/) media player. After each sentence, users can write their responses, which are then corrected and graded based on accuracy.
 
 ## Features
 
-- Reads Dutch text and plays it back using VLC.
+- Reads Dutch text and plays it back using [VLC](https://www.videolan.org/vlc/).
 - Allows users to write responses after each sentence.
 - Provides corrections and grades based on user input.
 - Customizable input text for tailored learning experiences.
@@ -13,12 +13,15 @@ Nederlands4Python is a Python application designed to help users learn Dutch thr
 ## Requirements
 
 - Python 3.x
-- VLC media player installed on your system.
+- [VLC](https://www.videolan.org/vlc/) media player installed on your system.
 - Required Python libraries:
-  - `vlc`
-  - `textblob`
-  - `nltk` (optional for advanced language processing)
-
+  - `gtts`
+  - `subprocess`
+  - `random`
+  - `time`
+  - `re`
+  - `os`
+ 
 ## Installation
 
 1. Clone the repository:
