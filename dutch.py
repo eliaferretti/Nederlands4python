@@ -1,3 +1,6 @@
+# Full path to VLC executable
+vlc_path = r"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe"
+
 from gtts import gTTS
 import subprocess
 import random 
@@ -54,10 +57,8 @@ def highlight_text(original_text, user_input, correct_words, total_words):
     
     return originaloriginal,highlighted,correct_words,total_words
 
-def read_text_aloud(paragraph, les_nummer, lang="nl"):
-    # Full path to VLC executable
-    vlc_path = r"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe"
-    
+def read_text_aloud(paragraph, les_nummer, vlc_path, lang="nl"):
+        
     # Split the paragraph into lines
     lines = paragraph.split('\n')
 
@@ -102,7 +103,7 @@ def read_text_aloud(paragraph, les_nummer, lang="nl"):
         print("\nCongrats, you passed!")
     else:
         print("\nYou failed, you stupid donkey")
-
+   
 user_input = input("Please enter de les: ")
 
 # Specify the path to the text file
@@ -113,4 +114,4 @@ with open(file_path, 'r') as file:
     file_contents = file.read()
 paragraphs = file_contents.split('\n\n')
 
-read_text_aloud(random.choice(paragraphs),user_input)
+read_text_aloud(random.choice(paragraphs),user_input,vlc_path)
