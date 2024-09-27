@@ -57,6 +57,8 @@ Nederlands4Python is a Python application designed to help users learn Dutch thr
 
 3. Follow the prompts to listen to the Dutch sentences, write your responses, and receive corrections and grades.
 
+Alternatively you could also run the `run.bat` file
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure that your code adheres to the project's style guidelines and includes relevant tests.
