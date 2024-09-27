@@ -19,7 +19,10 @@ def remove_symbold(word):
     word = word.replace('>', '').strip()
     word = word.replace('<', '').strip()
     word = word.replace('?', '').strip()
-    word = word.replace('<', '').strip()
+    word = word.replace('!', '').strip()
+    word = word.replace(':', '').strip()
+    word = word.replace('(', '').strip()
+    word = word.replace(')', '').strip()
     word = word.replace("'", '').strip()
     word = word.replace('.', '').strip()
     word = word.replace(',', '').strip().lower()
@@ -73,10 +76,8 @@ def read_text_aloud(paragraph, les_nummer, vlc_path, lang="nl"):
         # Convert the line to speech
 
         if not(line==''):
-            tts = gTTS(text=line, lang=lang, slow=False)
-
-            if not os.path.exists("audio"):
-                os.makedirs("audio")
+            # tts = gTTS(text=line, lang=lang, slow=False)
+            tts = gTTS(text=". " + line,tld="com", lang=lang, slow=False)
 
             # Save the audio to a file
             audio_file = f"audio/audio{les_nummer}_{i+1}.mp3"
@@ -106,7 +107,10 @@ def read_text_aloud(paragraph, les_nummer, vlc_path, lang="nl"):
         print("\nCongrats, you passed!")
     else:
         print("\nYou failed, you stupid donkey")
-   
+
+if not os.path.exists("audio"):
+    os.makedirs("audio")
+
 user_input = input("Please enter de les: ")
 
 # Specify the path to the text file
