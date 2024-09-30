@@ -16,6 +16,9 @@ def clear_screen():
         os.system('clear')
 
 def remove_symbold(word):
+    word = word.replace('-', '').strip()
+    word = word.replace('+', '').strip()
+    word = word.replace('_', '').strip()
     word = word.replace('>', '').strip()
     word = word.replace('<', '').strip()
     word = word.replace('?', '').strip()
@@ -24,6 +27,7 @@ def remove_symbold(word):
     word = word.replace('(', '').strip()
     word = word.replace(')', '').strip()
     word = word.replace("'", '').strip()
+    word = word.replace('"', '').strip()
     word = word.replace('.', '').strip()
     word = word.replace(',', '').strip().lower()
     word = word.replace(',', '').strip().lower()
@@ -108,6 +112,8 @@ def read_text_aloud(paragraph, les_nummer, vlc_path, lang="nl"):
     else:
         print("\nYou failed, you stupid donkey")
 
+clear_screen()
+
 if not os.path.exists("audio"):
     os.makedirs("audio")
 
@@ -121,4 +127,13 @@ with open(file_path, 'r') as file:
     file_contents = file.read()
 paragraphs = file_contents.split('\n\n')
 
-read_text_aloud(random.choice(paragraphs),user_input,vlc_path)
+type_of_par = input("select paragraph of niet [n]/y?")
+
+if type_of_par=="y":
+    par = 10000
+    while int(par) > len(paragraphs):
+        par = input(f"Please enter valid paragraph number (<{len(paragraphs)+1}): ")
+    par = int(par)-1
+    read_text_aloud(paragraphs[par],user_input,vlc_path)
+else:
+    read_text_aloud(random.choice(paragraphs),user_input,vlc_path)
